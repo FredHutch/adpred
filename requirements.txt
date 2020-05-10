@@ -113,7 +113,7 @@ sqlite==3.31.1
 statsmodels==0.10.1
 tapi==1000.10.8
 tensorboard==1.14.0
-tensorflow==1.14.0
+tensorflow==1.15.2
 tensorflow-base==1.14.0
 tensorflow-estimator==1.14.0
 termcolor==1.1.0
