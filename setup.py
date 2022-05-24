@@ -27,7 +27,7 @@ setuptools.setup(
         'plotly==5.6.0',
         'requests==2.27.1',
         'scikit-learn==1.0.2',
-        'tensorflow==2.8.0',
+        'tensorflow==2.8.1',
     ],
     include_package_data=True,
     scripts=[
