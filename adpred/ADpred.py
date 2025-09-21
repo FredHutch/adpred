@@ -60,25 +60,8 @@ def calculate_psipred(fasta_name):
     '''    
 
     if local_psipred is not None:
-        # Run local psipred tool; tcsh is needed.
-        # Download from http://bioinfadmin.cs.ucl.ac.uk/downloads/psipred/.
-        psipred_dir = os.path.dirname(local_psipred)
-        fasta_path = os.path.join(os.getcwd(), fasta_name)
-        command = ["tcsh", local_psipred, fasta_path]
-        subprocess.run(command, check=True, cwd=psipred_dir)
-
-        # Read output.
-        fasta_stem = os.path.splitext(os.path.basename(fasta_name))[0]
-        out_file_stem = os.path.join(psipred_dir, fasta_stem)
-        with open(out_file_stem + ".horiz", encoding='utf-8') as f:
-            unfiltered = f.read().strip()
-
-        # Remove psipred intermediate files.
-        os.remove(out_file_stem + ".horiz")
-        os.remove(out_file_stem + ".ss")
-        os.remove(out_file_stem + ".ss2")
-
-        struct = ''.join([i.group(1) for i in re.finditer('Pred: (.*)\n', unfiltered)]).replace("C","-")
+        command = ['bash', 'local_psipred', fasta_name]
+        struct = Popen(p, stdout=PIPE).communicate()[0].decode('utf-8').strip().replace('C','-')
     else:
         struct = get_psipred(fasta_name)
 
