@@ -21,14 +21,14 @@ setuptools.setup(
     ],
     python_requires='>=3.9',
     install_requires=[
-        'keras==2.11.0',
-        'numpy==1.23.5',
-        'pandas==1.5.2',
-        'plotly==5.11.0',
-        'requests==2.28.1',
-        'requests-oauthlib==1.3.1',
-        'scikit-learn==1.1.3',
-        'tensorflow==2.11.0'
+        'keras==3.11.3',
+        'numpy==2.3.3',
+        'pandas==2.3.2',
+        'plotly==6.3.0',
+        'requests==2.32.5',
+        'requests-oauthlib==2.0.0',
+        'scikit-learn==1.7.2',
+        'tensorflow==2.20.0'
     ],
     include_package_data=True,
     scripts=[
