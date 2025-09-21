@@ -49,7 +49,7 @@ for n,arg in enumerate(sys.argv):
         Seq = sys.argv[n+1]
 
     elif arg in ["-l", "--local-psipred"]:
-        local_psipred = sys.argv[n+1]
+        ADpred.local_psipred = sys.argv[n+1]
 
     elif arg in ["-sm", '--saturated-mutagenesis']:
         start = [int(i) for i in sys.argv[n+1].split(",")]
